@@ -1,3 +1,6 @@
+// Autorzy: Kamil Włodarczyk i Kajetan Zawadka
+
+
 #include <iostream>
 #include <vector>
 #include <ctime>
