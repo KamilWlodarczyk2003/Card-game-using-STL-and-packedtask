@@ -7,11 +7,6 @@
 #include <future>
 #include <random>
 
-//do zrobienia:
-//-mechanizm blokujący wybranie kart z poza tali np zamiast 12 jak się kliknie "Q" to się psuje
-//-zaprojektować turę komputera
-//-wykrywanie zwycięstwa i porażki
-//-wykrycie sytuacji w której w ręce gracz lub komputer nie ma już kart
 using namespace std;
 const int LICZBA_KART = 52;
 // '3'-czerwo '4'-kier '5'-trefl '6'-pik
@@ -65,7 +60,7 @@ void reset(bool* stos, karta* baza_kart, vector<karta>* karty_gr_1, vector<karta
 			if (stos[random]) {											//sprawdza czy na stosie jest karta pod takim numerem
 				(*karty_gr_1).push_back(baza_kart[random]);				//jeżeli jest to daje tą karte ze stosu graczowi 1
 				stos[random] = false;
-				break;													//robi to do skutku
+				break;													
 			}
 		}
 		random = random_liczba();
@@ -359,11 +354,6 @@ int main()
 	th.join();
 
 	reset(stos, baza_kart, &karty_gr_1, &karty_gr_2);
-	//tasuj(baza_kart);
-	//for (int i = 0; i < 52; i++)
-	//{
-		//cout << baza_kart[i].figura << baza_kart[i].kolor << endl;
-	//}
 	gra(stos, baza_kart, &karty_gr_1, &karty_gr_2);
 
 }
